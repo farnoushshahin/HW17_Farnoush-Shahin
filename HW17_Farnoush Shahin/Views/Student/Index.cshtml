@@ -1,0 +1,69 @@
+﻿@model List<Student>
+@{
+}
+
+
+
+<div class="container">
+
+
+    <br />
+    <div class="d-flex justify-content-between">
+        <div>
+            <h2>دانشجویان</h2>
+        </div>        
+        <br />
+    </div>
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+
+                <th>ردیف</th>
+                <th>نام</th>
+                <th>نام خانوادگی</th>
+                <th>شماره دانشجویی</th>
+                <th>عملیات</th>
+
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Model[i].FirstName
+                    </td>
+                    <td>
+                        @Model[i].LastName
+                    </td>
+                    <td>
+                        @Model[i].StudentCardNumber
+                    </td>
+
+                    <td>
+                        <!-- A link that triggers the modal -->
+                        <a class="btn btn-success" asp-controller="Student" asp-action="ShowCourses"  asp-route-Id="@Model[i].Id">نمابش دروس</a>
+                        <a class="btn btn-success" asp-controller="Student" asp-action="ShowTeachers" asp-route-Id="@Model[i].Id">نمابش اساتید</a>
+
+                    </td>
+
+                </tr>
+            }
+
+
+        </tbody>
+
+    </table>
+
+
+</div>
+

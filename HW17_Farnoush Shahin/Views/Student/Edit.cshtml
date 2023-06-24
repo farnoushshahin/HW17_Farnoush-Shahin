@@ -1,0 +1,20 @@
+﻿
+@model Student
+@{}
+    
+<div class="container">
+
+    <form asp-action="Edit" asp-controller="Student" method="post" >
+        <label asp-for="FirstName"></label>
+        <input type="text" class="form-control" name="firstName" placeholder="@Model.FirstName" />
+        <label asp-for="LastName"></label>
+        <input type="text" class="form-control" name="lastName" placeholder="@Model.LastName" />
+        <label asp-for="StudentCardNumber"></label>
+        <input type="text" class="form-control" name="StdCardNumber" placeholder="@Model.StudentCardNumber" />
+        <input type="text" name ="id" placeholder="@Model.Id"/> 
+        <input type="submit" class="btn btn-success" value="تایید"/>
+        
+    </form>
+
+</div>
+

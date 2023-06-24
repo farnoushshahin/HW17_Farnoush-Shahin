@@ -1,0 +1,47 @@
+﻿@model List<Teacher>
+@{
+}
+
+<div class="container">
+
+
+    <br />
+    <div class="d-flex justify-content-between">
+        <div>
+            <h2>اساتید</h2>
+        </div>        
+        <br />
+    </div>
+    <table class="table table-striped">
+
+        <thead>
+
+            <tr>
+                <th>ردیف</th>
+                <th>نام</th>
+                <th>دانشکده</th>
+            </tr>
+
+        </thead>
+
+
+        <tbody>
+
+            @for (int i = 0; i < Model.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @(i + 1)
+                    </td>
+                    <td>
+                        @Model[i].Name
+                    </td>
+                    <td>
+                        @Model[i].Department
+                    </td>
+                </tr>
+            }
+
+        </tbody>
+
+    </table>

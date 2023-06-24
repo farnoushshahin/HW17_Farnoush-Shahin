@@ -1,0 +1,18 @@
+﻿@model Student
+@{
+}
+
+<div class="container">
+		<form asp-action="Create" asp-controller="Student" method="post">
+		<label asp-for="FirstName"></label>
+		<input type="text" class="form-control" asp-for="FirstName"/>
+		<label asp-for="LastName"></label>
+		<input type="text" class="form-control" asp-for="LastName"/>
+		<label asp-for="StudentCardNumber"></label>
+		<input type="text" class="form-control" asp-for="StudentCardNumber"/>
+		
+		<br />
+		<input type="submit" class="btn btn-success" value="تایید"/>
+	</form>
+
+</div>
